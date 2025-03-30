@@ -23,3 +23,24 @@ async function fetchProductsAsync() {
       handleError(error);
     }
   }
+
+  // Task 4: Display Products
+function displayProducts(products) {
+    const container = document.getElementById("product-container");
+    container.innerHTML = ""; // Clear previous content
+    products.slice(0, 5).forEach((product) => {
+      const { name, price, image } = product.fields;
+      const imgUrl = image[0].url;
+  
+      const productDiv = document.createElement("div");
+      productDiv.className = "product";
+  
+      productDiv.innerHTML = `
+        <img src="${imgUrl}" alt="${name}" />
+        <h2>${name}</h2>
+        <p>$${(price / 100).toFixed(2)}</p>
+      `;
+  
+      container.appendChild(productDiv);
+    });
+  }
