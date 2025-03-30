@@ -44,3 +44,8 @@ function displayProducts(products) {
       container.appendChild(productDiv);
     });
   }
+
+  // Task 5: Error handler
+function handleError(error) {
+    console.error("An error occurred:", error.message);
+  }
